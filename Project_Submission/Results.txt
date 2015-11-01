@@ -1,0 +1,13 @@
+Results
+----------------
+
+We observed the clustering time by varying the number of iterations we were looping till and the number of clusters being formed. By hit and trial, we concluded that giving the number of clusters = 22 and the number of iterations 10 gave us the desired output in a very less time with an appreciable Dunn Index varying approximately between 0.44 and 0.51 and giving a Mean Squared Error of 8.04 which was within our limits of error, which was fixated at 10.
+
+So, following were our results with 10 iterations in the program.
+
+* Number of clusters = 22
+* MSE = 8.0448
+* Best end-to-end time (in secs) = 5.20274
+* Average end-to-end time (n secs) = 5.58055664
+* Best Clustering Time (in usecs) = 815904
+* Average Clustering Time (in usecs) = 1199376.7
