@@ -10,4 +10,4 @@ To efficiently work with these multi-core processors the users should acquire pa
 HPC is also a key driver in the field of data science. This course was an introduction to parallel computing and aims at teaching basic models of parallel programming including the principles of parallel algorithm design, parallel computer architectures, 
 programming models for shared and distributed-memory systems, message passing programming models used for cluster computing along with some important algorithms for parallel systems.
 
-Feel free to browse the repository. For any clarification, the author of the repo may be contacted at shaleen.k.gupta@gmail.com.
+Feel free to browse the repository. For any clarification, the author of the repo may be contacted at shaleenx@gmail.com.
