@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>ShaleenHPC.js</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="shaleenx">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+            <!--BEGIN HERE-->
+<div class="slides">
+    <section>
+    	<section>
+			<h2>High Dimensional <br>Data Clustering</h2>
+			<br>
+			<h3>Shaleen Kumar Gupta (201301429)</h3>
+			<h3>Visharad Bansal (201301438)</h3>
+			<br>
+			<h4>Dhirubhai Ambani Institute of Information and Communication Technology</h4>
+			<h4>Gandhinagar</h4>
+		</section>
+	</section>
+    <section>
+   		<section>
+        	<h2>Problem Statement</h2>
+        </section>
+        <section>
+        	<p>Cluster a high dimensional unlabelled data set.</p>
+        	<p>Assign membership to each of the data points.</p>
+        </section>
+	</section>
+	<section>
+		<section>
+			<h2>Input and Output</h2>
+			<h4>
+				<ul>
+					<li>
+						Our Benchmark data set consisted of a 70MB .csv file containing 40,000 data points, each having 97 dimensions.
+					</li>
+					<li>
+						However, we have varied the size of the input file from 17.5 MB to 1.2G GB
+						to test the efficiency of the algorithm.
+					</li>
+					<li>
+						We implemented our algorithm on an Intel Cluster having 16 cores using the OpenMP Multi threading Library. Performance was measured on two metrics, the Dunn index of the cluster and the Root Mean Squared error.
+					</li>
+				</ul>
+			</h4>
+		</section>
+		<section>
+			<p align="justify">We provide a High dimensional unlabelled data set with all real values.
+				The data file is in csv format. Each line is a record, or data point. The
+				attributes within the records or data points separated by commas.</p>
+
+				<p>Example:<br>
+				|­­­<-------- attributes ­­­­­­--------->|<br>
+				               _             <br>
+				1.321, 2.345, ...... , 3.35 \n |<br>
+				2.324, 1.115, ...... , 7.95 \n |<br>
+				.... |<br>
+				.... |<br>
+				.... |<br>
+				.<br>
+				.<br>
+				.<br>
+				1.821, 7.916, ...... , 2.79 EOF |<br>
+				</p>
+		</section>
+		<section>
+			<p align="justify">The output would be an ASCII file containing comma separated integers
+				(essentially a csv file). The clusters would be labelled with integers starting
+				from 1. If M clusters are found, the labels should be 1, 2, ... M. Each data
+				point should be assigned to a cluster. The results should be a comma
+				separated list of integer labels showing the membership of the data point to
+				the cluster.</p><br>
+			<p>Example: A sample output file may contain the following result:</p>
+				<br><p align="center">[10, 15, 2, 7, 31, 10, 1, 1....]</p><br>
+			<p align="justify">	which shows that the 1st and 6th data points are member of the
+				cluster labelled 10, the second data point is member of the cluster
+				labelled 15 and so on...</p>
+			<a href="https://github.com/shaleenx/High-Performance-Computing/blob/master/Project_Submission/src/output.csv">Sample Output</a>
+		</section>
+	</section>
+	<section>
+		<h2>Mathematical Parameters and Functionality Correctness</h2>
+		<h4>
+			<ul>
+				<li>
+					The Euclidian metric is used to calculate the distance between any two data points.
+					Euclidian distance between any two points x​and y, ​having dimensions 
+					[x0, x1, ... , xk] and [y0, y1, ... , yk] is given by:<br><br>
+					<center><img src="./img/Euclidean_Metric.png"></center>
+				</li>
+				<li>
+					Dunn Index: The ratio of the smallest distance between observations
+					not in the same cluster to the largest intra­cluster distance. The Dunn Index
+					has a value between zero and one, and should be maximized.
+				</li>
+				<li>
+					Mean Squared Error: An Octave Script was used to calculate the 
+					mean squared error in the clustered output obtained.<br>
+					<a href="https://goo.gl/0aNwRT">Github Link</a>
+					<p>Credits: Saptarshi Das, Shell, India [saptarshi.das@shell.com]</p>
+				</li>
+			</ul>
+		</h4>
+	</section>
+	<section>
+		<section>
+		<h2>Hardware Specifications</h2>
+		<p align="justify">A High Performance Cluster developed by Intel as part of the High Performance Computing Conference, Bangalore, 2015, was used in evaluating the compute times and speedups in the course of the project.</p>
+
+		<p align="left">
+			Architecture:		GenuineIntel x86_64<br>
+			Byte Order:			Little Endian<br>
+			Cores per Socket: 	8<br>
+			Sockets: 			2<br>
+			CPU MHz: 			1200.000<br>
+			L1d cache: 			32K<br>
+			L1i cache: 			32K<br>
+			L2 cache: 			256K<br>
+			L3 cache:			20480K<br>
+		</p>
+		</section>
+		<section>
+			<h2>Compilers and other <br>Specifications:</h2>
+			<p align="left">
+				Operating System: CentOS release 6.4 over Red Hat 4.4.7­3<br>
+				C Compiler: gcc (GCC) 4.4.7 20120313 (Red Hat 4.4.7­3)<br>
+				Python Interpreter: Python 2.6.6<br>
+				Octave Version: GNU Octave, version 3.8.2<br>
+				Graph Plotter: Plotly 1.8.11<br>
+			</p>
+		</section>
+	</section>
+	<section>
+		<section>
+       		<h2>Use Cases</h2>
+       	</section>
+       	<section>
+       		<ul>
+       			<li>
+  					<p>Such Algorithms are extensively used in the domains of
+  					Artificial Intelligence, Machine Learning, and Data Mining</p>
+       			</li>
+       			<li>
+       				<p>A cluster is intended to group objects that are related, based on observations of their attribute's values.</p>
+       			</li>
+       			<li>
+       				<p>For example, in newborn screening, a cluster of samples might identify newborns that share similar blood values, which might lead to insights about the relevance of certain blood values for a disease.</p>
+       			</li>
+       		</ul>
+       	</section>
+    </section>
+    <section>
+    	<section>
+    		<h2>Serial Algorithm</h2>
+    		<p align="justify">The problem is essentially of finding k cluster centroids such
+				that the average squared Euclidean distance (which is basically the mean
+				squared error or MSE) between a data point and its nearest cluster centroid
+				is minimized. Unfortunately, this problem is known to be NP­complete
+				What our algorithm does is to basically approximate a solution in a
+				machine-learning style iterative gradient descent algorithm
+    		</p>
+    	</section>
+    	<section>
+    		<ul>
+				1. (Initialization) Select a set of k starting points {mj}
+					selected may be done in any random manner.
+			</ul>
+			<ul>
+				2. (Distance Calculation) For each data point Xi, 1 ≤ i ≤ n, compute its
+					Euclidean distance to each cluster centroid mj, 1≤j≤k, and then find the
+					closest cluster centroid.
+			</ul>
+			<ul>
+				3. (Centroid Recalculation) For each 1≤j≤k, recompute cluster centroid mj as
+					the average of data points assigned to it.
+			</ul>
+			<ul>
+				4. (Convergence Condition) Repeat steps 2 and 3, until convergence.
+			</ul>
+    	</section>
+    	<section>
+    		<h3>Serial Code</h3>
+    		<a href="https://goo.gl/HLLClL">Github Link</a>
+    	</section>
+    </section>
+    <section>
+    	<section>
+	    	<h2>Scope of Parallelism</h2>
+	    	<p align="justify">The clustering algorithm requires massive computations, with distance
+				between each data point and each centroid being calculated. Since
+				calculation of the appropriate centroid for each data point is independent of
+				the others, the algorithm provides a good scope for parallelism.
+				<br>
+				However, there is a bottleneck. The threads need to communicate among
+				themselves to keep the centroid values updated, as more than one thread
+				might try to access the same centroid point. In that case, it is imperative to
+				ensure that both threads do not try to modify the centroid at the same time,
+				as it might result in corrupted values.
+	    	</p>
+	    </section>
+	    <section>
+	    	<h2>Effect of increasing problem size on serial code</h2>
+	    	<iframe width="900" height="500" frameborder="0" scrolling="no" src="https://plot.ly/~shaleenx/32.embed"></iframe>
+	    </section>
+	    <section>
+	    	<img align="center" src="./img/pro_serial_scaling.png">
+	    </section>
+    </section>
+    <section>
+    	<section>
+    		<h2>Parallel Algorithm</h2>
+    		<img align="center" src="./img/Parallel_Pseudo_Code.png">
+    	</section>
+    	<section>
+    		<h3>Strategy of Parallelization</h3>
+    		<div>
+    			<br>
+    		</div>
+    		<ul align="center">
+    			<li>Data Input</li>
+    			<li>Choosing Initial Centroids</li>
+    			<li>Clustering</li>
+    		</ul>
+    	</section>
+    	<section>
+    		<a href="https://goo.gl/4OOSXI">Github Link to Parallel Code</a>
+    	</section>
+    </section>
+	<section>
+    	<section>
+    		<h2>Results and Related Discussion</h2>
+    	</section>
+    	<section>
+    		Effect of Parallelization: No. of Threads v/s Time Taken
+    		<iframe width="900" height="500" frameborder="0" scrolling="no" src="https://plot.ly/~shaleenx/18.embed"></iframe>
+    	</section>
+    	<section>
+    		Speedup Curve as a Function of No. of Threads
+    		<iframe width="900" height="500" frameborder="0" scrolling="no" src="https://plot.ly/~shaleenx/23.embed"></iframe>
+    	</section>
+    	<section>
+    		Speedup Curve as a Function of Problem size
+    		<iframe width="900" height="500" frameborder="0" scrolling="no" src="https://plot.ly/~shaleenx/27.embed"></iframe>
+    	</section>
+    	<section>
+    		<img align="center" src="./img/Pro_OMP_nvst.png">
+    	</section>
+    	<section>
+    		<img align="center" src="./img/Pro_omp_speedup.png">
+    	</section>
+    	<section>
+    		<img align="center" src="./img/pro_speedup_problem_size.png">
+    	</section>
+	</section>
+	<section>
+		<section>
+			<h3>Variation of serial part with increase in number of threads</h3>
+			<p align="justify">The fundamental formula for experimentally determining the Serial fraction
+			of the code is defined as follows:</p>
+			<img align="center" src="./img/Expression_for_Serial_fraction.png">
+			<p align="justify">where e is the experimentally determined serial fraction of the program, sigma is the time taken by the serial code, p is the number of threads, n is the problem size, and T is the time taken by the parallel code.</p>
+			<p align="justify">Using the simplified Karp­Flatt Metric with Psi being the speedup achieved, as defined below, we attempt to figure out possible explanations for our observations.</p>
+			<img align="center" src="./img/Karp_Flatt_Metric.png">
+		</section>
+		<section>
+			Following are the results obtained by calculating the Karp Flatt Metric for different number of threads
+			<img align="center" src="./img/Karp_Flatt_Results.png">
+		</section>
+		<section>
+			<p align="justify">Using (B) to determine the experimental serial fraction(e) of our code (Data Input+Clustering), we observe that the value of e does not show much variation with increase in number of threads.
+			According to (A), it shows the inefficiency of our algorithm, which agrees with our analysis, given that too much time is used up in data input.</p>
+			<p align="justify">
+			Next, we do the analysis only for the clustering part of our code, and observe a linearly increasing values of e. Using (A), we come to the conclusion that there is a loss due to overhead in the parallel fraction, and a possible explanation for that is the loss due the critical section of the code, where each thread has to wait for her cousins to finish updating the centroid value.</p>
+		</section>
+	</section>
+	<section>
+		<section>
+			<h2>Future Scope</h2>
+			<p align="justify">A major bottleneck in the efficiency turned out to be the data input function, with the reading of huge data files consuming a lot of time. As a solution,  in multithreading one can use tcmalloc(), or thread safe malloc, in order to make dynamic memory allocation more efficient as well as thread safe.
+The given algorithm is coarse grain, specially for large data inputs. In such cases, it might be a good idea to implement the given code on a distributed memory system. Also, MPI provides special libraries for parallel data input, which can be a huge advantage in terms of speedup.</p>
+		</section>
+	</section>
+	<section>
+		<h2>Bibliography</h2>
+		<p align="left">
+			[1] HiPC 2015 Parallel Programming Challenge Mentoring Forum.<br>
+			[2] Inderjit S. Dhillon, Dharmendra S. Modha, in ‘A Data Clustering Algorithm On Distributed Memory Multiprocessors’.<br>
+			[3] Maria Halkidi, Yannis Batistakis, Michalis Vazirgiannis, Department of Informatics, Athens University of Economics and Business, in ‘Clustering Validity Checking Methods’, ACM Sigmod Record, 2002.<br>
+		</p>
+	</section>
+</div>
+
+
+
+            <!--END HERE-->
+			
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
