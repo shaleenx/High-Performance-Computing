@@ -11,3 +11,9 @@ HPC is also a key driver in the field of data science. This course was an introd
 programming models for shared and distributed-memory systems, message passing programming models used for cluster computing along with some important algorithms for parallel systems.
 
 Feel free to browse the repository. For any clarification, the author of the repo may be contacted at shaleenx@gmail.com.
+
+Author:
+Shaleen Kumar Gupta
+B.Tech. (Hons. in ICT with minors in CS)
+Dhirubhai Ambani Institute of Information and Communication Technology, Gandhinagar
+E-mail: shaleenx@gmail.com
