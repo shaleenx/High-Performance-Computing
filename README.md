@@ -12,8 +12,8 @@ programming models for shared and distributed-memory systems, message passing pr
 
 Feel free to browse the repository. For any clarification, the author of the repo may be contacted at shaleenx@gmail.com.
 
-Author:
-Shaleen Kumar Gupta
-B.Tech. (Hons. in ICT with minors in CS)
-Dhirubhai Ambani Institute of Information and Communication Technology, Gandhinagar
+Author:<br>
+Shaleen Kumar Gupta<br>
+B.Tech. (Hons. in ICT with minors in CS) <br>
+Dhirubhai Ambani Institute of Information and Communication Technology, Gandhinagar <br>
 E-mail: shaleenx@gmail.com
