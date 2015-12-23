@@ -8,7 +8,7 @@ I. Move into the src folder inside the extracted folder.
 
 II. Run the following command on the bash prompt to run the makefile to build the executables:
 
-	$make
+        $make
 
 III. An executable will thus be formed with the name ‘a.out’
 
