@@ -11,4 +11,4 @@ Author:<br>
 Shaleen Kumar Gupta<br>
 B.Tech. (Hons. in ICT with minors in CS) <br>
 Dhirubhai Ambani Institute of Information and Communication Technology, Gandhinagar <br>
-E-mail: shaleenx@gmail.com
+E-mail: shaleenx [at] gmail [dot] com
